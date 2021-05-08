@@ -25,7 +25,7 @@ export default {
             loading: true,
             results: [],
             ships: [],
-            loadingImage: require('../assets/luke.gif')
+            loadingImage: require('../assets/ship.gif')
         }
     },
     methods: {

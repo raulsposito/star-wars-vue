@@ -24,7 +24,7 @@ export default {
         return {
             loading: true,
             personajes: [],
-            loadingImage: require('../assets/mayTheForce.gif')
+            loadingImage: require('../assets/luke.gif')
         }
     },
     methods: {

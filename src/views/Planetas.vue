@@ -25,7 +25,7 @@ export default {
         return {
             loading: true,
             planets: [],
-            loadingImage: require('../assets/luke.gif')
+            loadingImage: require('../assets/planet.gif')
         }
     },
     methods: {
