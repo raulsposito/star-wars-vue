@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    Star Wars with Vue
-  </div>
+  <img :src='image' class="m-auto align-center">
 </template>
 
 <script>
@@ -9,8 +7,10 @@
 
 export default {
   name: "Home",
-  components: {
-    
-  },
+  data() {
+    return {
+      image: require('../assets/darth.gif')
+    }
+  }
 };
 </script>
