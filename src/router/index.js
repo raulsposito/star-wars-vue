@@ -16,6 +16,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Naves.vue"),
   },
+  {
+    path: "/planetas",
+    name: "Planetas",
+    component: () =>
+      import("../views/Planetas.vue"),
+  },
 ];
 
 const router = createRouter({
