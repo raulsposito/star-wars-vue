@@ -2,7 +2,7 @@
 
 **la pagina tiene que tener varias "páginas"
 
-*quiero tres páginas. En cada una una lista: naves, personajes y planetas
+**quiero tres páginas. En cada una una lista: naves, personajes y planetas
 
 *las listas se tienen que poder filtrar. Un input donde escribís algo y se te muestra lo que tenga algo relacionado a lo que escribist
 

@@ -22,6 +22,12 @@ const routes = [
     component: () =>
       import("../views/Planetas.vue"),
   },
+  {
+    path: "/personajes",
+    name: "Personajes",
+    component: () =>
+      import("../views/Personajes.vue"),
+  },
 ];
 
 const router = createRouter({

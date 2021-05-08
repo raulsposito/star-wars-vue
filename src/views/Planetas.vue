@@ -1,7 +1,7 @@
 <template>
     <main v-if="!loading">
         <ul class="text-center" v-for="(planet, index) in planets" :key="index">
-            <li class="font-bold">Name: {{ planet.name }}</li>
+            <li class="font-bold">Planet: {{ planet.name }}</li>
             <li>Climate: {{ planet.climate }}</li>
             <li>Gravity: {{ planet.gravity }}</li>
             <li>Population: {{ planet.population }}</li><br><br>
