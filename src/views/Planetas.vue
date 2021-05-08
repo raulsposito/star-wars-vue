@@ -1,6 +1,11 @@
 <template>
     <main v-if="!loading">
-        <ul class="text-center" v-for="(planet, index) in planets" :key="index">
+
+        <div class="search-wrapper p-4 mb-10 text-center">
+            <input type="text" v-model="search" placeholder="Search by name..."/>
+        </div>
+
+        <ul class="text-center" v-for="(planet, index) in filteredList" :key="index">
             <li class="font-bold">Planet: {{ planet.name }}</li>
             <li>Climate: {{ planet.climate }}</li>
             <li>Gravity: {{ planet.gravity }}</li>
@@ -40,5 +45,12 @@ export default {
         this.loading = false
         console.log(data)
     },
+    computed: {
+        filteredList() {
+            return this.planets.filter(item => {
+                return item.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+        }
+    }
 }
 </script>

@@ -1,11 +1,18 @@
 <template>
     <main v-if="!loading">
-        <ul class="text-center" v-for="(personaje, index) in personajes" :key="index">
-            <li class="font-bold">{{ personaje.name }}</li>
-            <li>Gender: {{ personaje.gender }}</li>
-            <li><a href="personaje.url" >Link</a></li><br><br>
-        </ul>
-    
+
+        <div class="search-wrapper p-4 mb-10 text-center">
+            <input type="text" v-model="search" placeholder="Search by name..."/>
+        </div>
+
+        <div class="wrapper">
+            <ul class="text-center" v-for="(personaje, index) in filteredList" :key="index">
+                <li class="font-bold">{{ personaje.name }}</li>
+                <li>Gender: {{ personaje.gender }}</li>
+                <li><a href="personaje.url" >Link</a></li><br><br>
+            </ul>
+        </div>
+
     </main>
 
     <main v-else class="flex flex-col align-center justify-center text-center"> 
@@ -23,6 +30,7 @@ export default {
     data() {
         return {
             loading: true,
+            search: '',
             personajes: [],
             loadingImage: require('../assets/luke.gif')
         }
@@ -39,5 +47,12 @@ export default {
         this.loading = false
         console.log(data)
     },
+    computed: {
+        filteredList() {
+            return this.personajes.filter(item => {
+                return item.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+        }
+    }
 }
 </script>

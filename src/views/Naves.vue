@@ -1,10 +1,18 @@
 <template>
     <main v-if="!loading">
-        <ul class="text-center" v-for="(ship, index) in ships" :key="index">
-            <li class="font-bold">Name: {{ ship.name }}</li>
-            <li>Manufacturer: {{ ship.manufacturer }}</li>
-            <li>Passengers: {{ ship.passengers }}</li><br><br>
-        </ul>
+
+        <div class="search-wrapper p-4 mb-10 text-center">
+            <input type="text" v-model="search" placeholder="Search by name..."/>
+        </div>
+        
+        <div class="wrapper">
+            <div class="text-center" v-for="(ship, index) in filteredList" :key="index">
+            <!-- <a v-bind:href="ship.link" target="_blank"> -->
+                <p class="font-bold">Name: {{ ship.name }}</p>
+                <p>By: {{ ship.manufacturer }}</p><br>
+            
+            </div>
+        </div>
     
     </main>
 
@@ -23,7 +31,7 @@ export default {
     data() {
         return {
             loading: true,
-            results: [],
+            search: '',
             ships: [],
             loadingImage: require('../assets/ship.gif')
         }
@@ -41,5 +49,12 @@ export default {
         this.loading = false
         console.log(data)
     },
+    computed: {
+        filteredList() {
+            return this.ships.filter(ship => {
+                return ship.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+        }
+    }
 }
 </script>
