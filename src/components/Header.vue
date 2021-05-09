@@ -1,6 +1,6 @@
 <template>
   <header class="text-center bg-black text-white p-4 mb-10">
-    <img :src="img" class="w-40 m-auto" />
+    <img :src="img" class="w-36 m-auto" />
     <p>API by <a class="text-gray-300" href="https://swapi.dev/" target="_blank">SWAPI</a></p>
  
     <a class="hover:text-yellow-300 align"><router-link to="/">Home</router-link></a> |
