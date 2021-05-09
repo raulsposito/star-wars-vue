@@ -5,13 +5,15 @@
             <input type="text" v-model="search" placeholder="Search by name..."/>
         </div>
 
-        <ul class="text-center" v-for="(planet, index) in filteredList" :key="index">
-            <li class="font-bold">Planet: {{ planet.name }}</li>
-            <li>Climate: {{ planet.climate }}</li>
-            <li>Gravity: {{ planet.gravity }}</li>
-            <li>Population: {{ planet.population }}</li><br><br>
-        </ul>
-    
+        <div class="wrapper">
+            <ul class="text-center" v-for="(planet, index) in filteredList" :key="index">
+                <li class="font-bold">Planet: {{ planet.name }}</li>
+                <li>Climate: {{ planet.climate }}</li>
+                <li>Gravity: {{ planet.gravity }}</li>
+                <li>Population: {{ planet.population }}</li><br><br>
+            </ul>
+        </div>
+
     </main>
 
     <main v-else class="flex flex-col align-center justify-center text-center"> 
@@ -29,6 +31,7 @@ export default {
     data() {
         return {
             loading: true,
+            search: '',
             planets: [],
             loadingImage: require('../assets/planet.gif')
         }
