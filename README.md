@@ -1,5 +1,11 @@
 # star-wars-vue
 
+This is an open source / educational project
+
+Made with Vue JS & Tailwind
+
+See [Deployed Version](https://star-wars-vue.herokuapp.com/)
+
 ## Project setup
 ```
 npm install
